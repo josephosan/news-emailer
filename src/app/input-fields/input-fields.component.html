@@ -1,0 +1,23 @@
+<input
+  class="form form-control input-control"
+  [type]="type"
+  [placeholder]="placeholder"
+  [formControl]="control"
+  >
+
+<ng-container>
+  <div class="alert alert-danger alert-control" *ngIf="control.touched && control.invalid">
+    <div *ngIf="control.errors?.['required']">
+      This field is required!
+    </div>
+    <div *ngIf="control.errors?.['maxlength']">
+      Maxlength is {{ control.errors?.['maxlength'].requiredLength }}!
+    </div>
+    <div *ngIf="control.errors?.['minlength']">
+      Minlenght is {{ control.errors?.['minlength'].requiredLength }}!
+    </div>
+    <div *ngIf="control.errors?.['email']">
+      This is not a valid email!
+    </div>
+  </div>
+</ng-container>
