@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
     this.userService.getData().subscribe(
       (res: any) => {
         this.numberOfUsers = res;
+        console.log(res);
       },
       (err) => {
         console.error(err);

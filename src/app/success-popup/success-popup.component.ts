@@ -23,6 +23,7 @@ export class SuccessPopupComponent implements OnInit {
 
   onOkClose() {
     this.mathDialogRef.close();
+    window.location.reload();
   }
 
 }
