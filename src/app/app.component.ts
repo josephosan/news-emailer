@@ -73,6 +73,7 @@ export class AppComponent implements OnInit {
 
         // after all usage; clearing the form.
         data.reset();
+        this.numberOfUsersFinder();
       },
       (err) => {
         if(err.status === 400) {
@@ -106,7 +107,7 @@ export class AppComponent implements OnInit {
     .subscribe(
       (res: any) => {
         this.userRegion = res.country_name;
-        // console.log(this.userRegion);
+        console.log(this.userRegion);
       },
       (err: any) => {
         this.userIPError = err.message;
