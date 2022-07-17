@@ -8,6 +8,6 @@ import { Injectable } from '@angular/core';
 export class UserService extends DataService {
 
   constructor(http: HttpClient) {
-    super('https://news-emailer-joseph.herokuapp.com/users', http);
+    super('http://localhost:3000/users', http);
   }
 }

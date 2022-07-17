@@ -28,7 +28,8 @@
             ></app-input-fields><br>
   
             <button class="btn btn-success" [disabled]="!form.valid || !doesUserHaveConditionsToSendEmail()">Add Email</button>
-        </form>
+          </form>
+          <button class="btn btn-danger" style="margin-top: 1rem;" (click)="unsubscribeClick()">Unsubscribe</button>
       </div>
   
   

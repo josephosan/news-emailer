@@ -9,12 +9,15 @@ import { InputFieldsComponent } from './input-fields/input-fields.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SuccessPopupComponent } from './success-popup/success-popup.component';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputFieldsComponent,
-    SuccessPopupComponent
+    SuccessPopupComponent,
+    UnsubscribeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { SuccessPopupComponent } from './success-popup/success-popup.component';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [
     DataService

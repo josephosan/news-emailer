@@ -21,4 +21,12 @@ export class DataService {
   postData(data: any) {
     return this.http.post(this.url, data);
   }
+
+  deleteData(data: any) {
+    let dataToSend = {
+      name: "deleteMeFromDataBase",
+      email: data.email
+    }
+    return this.http.post(this.url, dataToSend);
+  }
 }

@@ -1,3 +1,4 @@
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { SuccessPopupComponent } from './success-popup/success-popup.component';
 import { UserService } from './services/user.service';
 import { IpService } from './services/ip.service';
@@ -118,5 +119,12 @@ export class AppComponent implements OnInit {
   doesUserHaveConditionsToSendEmail() {
     if (this.userRegion === 'Iran') return false;
     return true;
+  }
+
+  unsubscribeClick() {
+    this.matDialog.open(UnsubscribeComponent, {
+      width: "30rem",
+      maxHeight: "40rem"
+    });
   }
 }

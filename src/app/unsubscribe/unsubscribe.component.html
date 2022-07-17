@@ -1,0 +1,19 @@
+<button class="btn btn-close" (click)="onCloseUnsubscribe()"></button><br><br>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  <div class="alert alert-warning" style="margin-bottom: 2rem;">
+    If you are from iran please change your IP address.
+  </div>
+  <div class="alert alert-danger" *ngIf="serverError !== ''" style="margin-bottom: 2rem;">
+    {{ serverError }}
+  </div>
+  <div class="alert alert-success" *ngIf="serverResponse !== ''" style="margin-bottom: 2rem;">
+    {{ serverResponse }}
+  </div>
+  <app-input-fields
+    placeholder="Email"
+    type="email"
+    [control]="$any(email)"
+    ></app-input-fields><br>
+
+    <button class="btn btn-danger" [disabled]="!form.valid || !doesUserHaveConditionsToDeleteEmail()">Delete</button>
+  </form>
