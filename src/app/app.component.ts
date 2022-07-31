@@ -31,18 +31,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadIP();
+    // this.loadIP();
     this.numberOfUsersFinder();
   }
 
   numberOfUsersFinder() {
-    this.userService.getData().subscribe(
+    this.userService.getSpecificData().subscribe(
       (res: any) => {
-        this.numberOfUsers = res;
-        console.log(res);
+        this.numberOfUsers = res.count;
       },
       (err) => {
-        console.error(err);
         this.numberOfUsers = '';
       }
     )

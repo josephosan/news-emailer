@@ -26,19 +26,14 @@ export class UnsubscribeComponent implements OnInit {
     this.userService.deleteData(data.value).subscribe(
       (res: any) => {
         this.serverError = '';
-        this.serverResponse = res;
+        this.serverResponse = res.message;
 
         data.reset();
       }, 
       (err) => {
-        if(err.error.text === 'The email successfully deleted.') {
-          this.serverError = '';
-          this.serverResponse = 'The email successfully deleted!';
-          data.reset();
-          return;
-        }
+        data.reset();
         this.serverResponse = '';
-        this.serverError = err.error;
+        this.serverError = err.error.message;
       }
     )
   }

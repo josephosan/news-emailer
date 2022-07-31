@@ -22,6 +22,10 @@ export class DataService {
     return this.http.post(this.url, data);
   }
 
+  getSpecificData() {
+    return this.http.get(this.url+'/count?onlyCount=true');
+  }
+
   deleteData(data: any) {
     let dataToSend = {
       name: "deleteMeFromDataBase",

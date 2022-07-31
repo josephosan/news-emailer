@@ -1,7 +1,7 @@
 <button class="btn btn-close" (click)="onCloseUnsubscribe()"></button><br><br>
 <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-  <div class="alert alert-warning" style="margin-bottom: 2rem;">
-    If you are from iran please change your IP address.
+  <div class="alert alert-success" style="margin-bottom: 1.5rem;">
+    Enter you Email:
   </div>
   <div class="alert alert-danger" *ngIf="serverError !== ''" style="margin-bottom: 2rem;">
     {{ serverError }}
