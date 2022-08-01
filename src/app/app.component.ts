@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
       },
       (err) => {
         if(err.status === 400) {
-          this.serverError = err.error;
+          this.serverError = err.error.message;
           return;
         } else {
           console.log(err.error);
